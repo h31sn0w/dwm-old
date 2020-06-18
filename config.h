@@ -102,9 +102,10 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("amixer -q -D pulse set Master toggle") },
-	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("amixer -q -D pulse set Master 5%+ unmute") },
-	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("amixer -q -D pulse set Master 5%- unmute") },
+	{ 0, XF86XK_AudioMute,		spawn,                     SHCMD("amixer -q -D pulse set Master toggle") },
+	{ 0, XF86XK_AudioRaiseVolume,	spawn,	                   SHCMD("amixer -q -D pulse set Master 5%+ unmute") },
+	{ 0, XF86XK_AudioLowerVolume,	spawn,	           	   SHCMD("amixer -q -D pulse set Master 5%- unmute") },
+	{ MODKEY,                  XK_bracketright, spawn,         SHCMD("maim -s | xclip -selection clipboard -t image/png") },
 	{ MODKEY|ShiftMask,             XK_e,      quit,           {0} },
 };
 
