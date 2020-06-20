@@ -33,7 +33,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Firefox",  NULL,       NULL,       1,            0,           -1 },
 };
 
 /* layout(s) */
@@ -72,8 +72,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_b,                    togglebar,             {0} },
 	{ MODKEY,                       XK_j,                    focusstack,            {.i = +1 } },
 	{ MODKEY,                       XK_k,                    focusstack,            {.i = -1 } },
-	{ MODKEY,                       XK_i,                    incnmaster,            {.i = +1 } },
-	{ MODKEY,                       XK_p,                    incnmaster,            {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_i,                    incnmaster,            {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_o,                    incnmaster,            {.i = -1 } },
 	{ MODKEY,                       XK_h,                    setmfact,              {.f = -0.05} },
 	{ MODKEY,                       XK_l,                    setmfact,              {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_Return,               zoom,                  {0} },
@@ -102,11 +102,23 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                                           6)
 	TAGKEYS(                        XK_8,                                           7)
 	TAGKEYS(                        XK_9,                                           8)
-	{ 0, XF86XK_AudioMute,		spawn,                                          SHCMD("amixer -q -D pulse set Master toggle; kill -49 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioRaiseVolume,	spawn,	                                        SHCMD("amixer -q -D pulse set Master 5%+ unmute; kill -49 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioLowerVolume,	spawn,	                         	        SHCMD("amixer -q -D pulse set Master 5%- unmute; kill -49 $(pidof dwmblocks)") },
+
+	{ 0,                            XF86XK_AudioMute,        spawn,                 SHCMD("amixer -q -D pulse set Master toggle; kill -49 $(pidof dwmblocks)") },
+	{ 0,                            XF86XK_AudioRaiseVolume, spawn,	                SHCMD("amixer -q -D pulse set Master 5%+ unmute; kill -49 $(pidof dwmblocks)") },
+	{ 0,                            XF86XK_AudioLowerVolume, spawn,	   	        SHCMD("amixer -q -D pulse set Master 5%- unmute; kill -49 $(pidof dwmblocks)") },
 	{ MODKEY,		        XK_backslash,            spawn,	                SHCMD("pactl set-source-mute @DEFAULT_SOURCE@ toggle; kill -49 $(pidof dwmblocks)") },
+
+	{ MODKEY,                       XK_p,                    spawn,                 SHCMD("mpc toggle") },
+	{ MODKEY|ShiftMask,             XK_bracketleft,          spawn,                 SHCMD("mpc prev") },
+	{ MODKEY|ShiftMask,             XK_bracketright,         spawn,                 SHCMD("mpc next") },
+
 	{ MODKEY,                       XK_bracketright,         spawn,                 SHCMD("maim -s | xclip -selection clipboard -t image/png") },
+
+	{ MODKEY,                       XK_x,                    spawn,                 SHCMD("st -e lf") },
+	{ MODKEY,                       XK_c,                    spawn,                 SHCMD("st -e ncmpcpp") },
+
+	{ MODKEY|ShiftMask,             XK_F11,                  spawn,                 SHCMD("reboot") },
+	{ MODKEY|ShiftMask,             XK_F12,                  spawn,                 SHCMD("poweroff") },
 	{ MODKEY|ShiftMask,             XK_e,                    quit,                  {0} },
 };
 
