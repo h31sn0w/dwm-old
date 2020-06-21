@@ -1,10 +1,9 @@
 patches
-	-fullgaps
-	-systray
-	-resizecorners
+	- fullgaps
+	- systray
+	- resizecorners
 	- swallow
-
-
+	- fibonacci layout
 needed
 	- media-gfx/maim
 	- media-sound/mpc
