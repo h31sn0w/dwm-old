@@ -2,8 +2,7 @@ patches
 	-fullgaps
 	-systray
 	-resizecorners
-	to patch:
-		- swallow
+	- swallow
 
 
 needed
