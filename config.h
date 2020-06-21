@@ -113,6 +113,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,                    spawn,                 SHCMD("mpc toggle") },
 	{ MODKEY|ShiftMask,             XK_bracketleft,          spawn,                 SHCMD("mpc prev") },
 	{ MODKEY|ShiftMask,             XK_bracketright,         spawn,                 SHCMD("mpc next") },
+	{ ShiftMask,                    XF86XK_AudioRaiseVolume, spawn,                 SHCMD("mpc volume +5") },
+	{ ShiftMask,                    XF86XK_AudioLowerVolume, spawn,                 SHCMD("mpc volume -5") },
 
 	{ MODKEY,                       XK_bracketright,         spawn,                 SHCMD("maim -s | xclip -selection clipboard -t image/png") },
 
