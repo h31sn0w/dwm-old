@@ -103,6 +103,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                                           7)
 	TAGKEYS(                        XK_9,                                           8)
 
+	{ MODKEY,                       XK_w,                    spawn,                 SHCMD("$BROWSER") },
+
 	{ 0,                            XF86XK_AudioMute,        spawn,                 SHCMD("amixer -q -D pulse set Master toggle; kill -49 $(pidof dwmblocks)") },
 	{ 0,                            XF86XK_AudioRaiseVolume, spawn,	                SHCMD("amixer -q -D pulse set Master 5%+ unmute; kill -49 $(pidof dwmblocks)") },
 	{ 0,                            XF86XK_AudioLowerVolume, spawn,	   	        SHCMD("amixer -q -D pulse set Master 5%- unmute; kill -49 $(pidof dwmblocks)") },
