@@ -9,3 +9,4 @@ needed
 	- media-sound/mpc
 	- media-sound/alsa-utils
 	- media-sound/pulseaudio
+	- x11-misc/xclip
