@@ -118,6 +118,8 @@ static Key keys[] = {
 	{ 0,                            XF86XK_AudioRaiseVolume, spawn,	                SHCMD("amixer -q -D pulse set Master 5%+ unmute; kill -49 $(pidof dwmblocks)") },
 	{ 0,                            XF86XK_AudioLowerVolume, spawn,	   	        SHCMD("amixer -q -D pulse set Master 5%- unmute; kill -49 $(pidof dwmblocks)") },
 	{ MODKEY,		        XK_backslash,            spawn,	                SHCMD("pactl set-source-mute @DEFAULT_SOURCE@ toggle; kill -49 $(pidof dwmblocks)") },
+	{ MODKEY|ShiftMask,             XK_a,                    spawn,                 SHCMD("st -e alsamixer") },
+	{ MODKEY,                       XK_a,                    spawn,                 SHCMD("st -e pulsemixer") },
 
 	{ MODKEY,                       XK_p,                    spawn,                 SHCMD("mpc toggle") },
 	{ MODKEY|ShiftMask,             XK_bracketleft,          spawn,                 SHCMD("mpc prev") },
